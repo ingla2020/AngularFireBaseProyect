@@ -1,0 +1,35 @@
+<div *ngIf="auth.user | async as user; else login" class="loginDiv">
+    <button (click)="auth.glogin()">google Login</button>
+
+    <form class="form" action="">
+
+        <input type="text" mame="email" placeholder="Escribre tu email" [(ngModel)]="auth.email"
+            [ngModelOptions]="{standalone: true}" />
+        <br /> <br />
+        <input type="password" mame="pass" placeholder="Escribre tu password" [(ngModel)]="auth.pass"
+            [ngModelOptions]="{standalone: true}" />
+        <br />
+
+      <!--  <button (click)="signEmail()">email Login</button>-->
+
+    </form>
+
+</div>
+
+<ng-template #login>
+    <div class="loginDiv">
+        <button (click)="auth.glogin()">google Login</button>
+
+  <form class="form" action="">
+
+      <input type="text" mame="email" placeholder="Escribre tu email" [(ngModel)]="auth.email" [ngModelOptions]="{standalone: true}"/>
+      <br/>  <br/>
+      <input type="password" mame="pass" placeholder="Escribre tu password" [(ngModel)]="auth.pass" [ngModelOptions]="{standalone: true}"/>
+      <br/>
+
+<!--      <button (click)="signEmail()">email Login</button>-->
+
+  </form>
+
+    </div>
+  </ng-template>
